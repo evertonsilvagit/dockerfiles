@@ -8,13 +8,13 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: Ere_250893
-      
     volumes:
-      - /home/ubuntu/mongoDB:/data/db
+      - /home/ubuntu/mysql:/data/db
+    ports:
+      - 3306:3306
 
-adminer:
+  adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
-      - 3306:3306
